@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: var(--Rose-100);
+    background-color: var(--Rose-50);
     font-family: 'Red Hat Text', sans-serif;
 }
 
@@ -26,11 +26,11 @@ body {
     justify-content: center; */
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 400px;
     justify-items: center;
     align-items: start;
     gap: 2rem;
-    padding: 3rem 6rem 3rem 6rem;
+    padding: 3rem 6rem;
 }
 
 .products-grid-container {
@@ -42,7 +42,13 @@ body {
 
 .products-container > h1 {
     font-size: 2.4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.4rem;
+}
+
+.image-container {
+    border-radius: 0.8rem;
+    overflow: hidden;
+    position: relative;
 }
 
 img {
@@ -50,13 +56,55 @@ img {
     max-width: 100%;
 }
 
+.add-to-cart-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--Rose-900);
+    border: 1px var(--Red) solid;
+    border-radius: 30px;
+    font-weight: 500;
+    background-color: white;
+    padding: 0.8em 2em;
+    min-width: 50%;
+    white-space: nowrap;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.description {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.description .category {
+    color: var(--Rose-400);
+    font-size: 1rem;
+}
+
+.description .title {
+    color: var(--Rose-900);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.description .price {
+    color: var(--Red);
+    font-weight: 500;
+}
+
 .cart-container {
     width: 100%;
     padding: 2rem;
     border-radius: 10px;
     display: grid;
-    gap: 1.2rem;
-    background-color: var(--Rose-50);
+    gap: 1.6rem;
+    background-color: #fff;
 }
 
 .cart-container h2 {
@@ -110,6 +158,50 @@ img {
 
 .total-price {
     color: var(--Rose-500);
+}
+
+.order-total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total-title {
+    color: var(--Rose-500);
+}
+
+.order-total-price {
+    color: var(--Rose-900);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.carbon-neutral-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--Rose-50);
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--Rose-900);
+}
+
+.carbon-neutral-container span {
+    font-weight: 700;
+}
+
+.order-btn {
+    font-size: 1.1rem;
+    border: none;
+    color: white;
+    font-weight: 500;
+    background-color: var(--Red);
+    padding: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .remove-btn {

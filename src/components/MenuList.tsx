@@ -6,8 +6,8 @@ function MenuList() {
 
     return (
         <ul className='products-grid-container'>
-            {productData.map(() => (
-                <MenuItem />
+            {productData.map((product) => (
+                <MenuItem product={product} />
             ))}
         </ul>
     );

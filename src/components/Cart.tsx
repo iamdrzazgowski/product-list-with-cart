@@ -1,6 +1,7 @@
 import CartList from './CartList';
 
 function Cart({ cart }) {
+    console.log(cart);
     return (
         <div className='cart-container'>
             <h2>Your cart (0)</h2>

@@ -1,11 +1,11 @@
 import MenuList from './MenuList';
 
-function Menu() {
+function Menu({ onAddToCart }) {
     return (
         <div className='products-container'>
             <h1>Desserts</h1>
 
-            <MenuList />
+            <MenuList onAddToCart={onAddToCart} />
         </div>
     );
 }

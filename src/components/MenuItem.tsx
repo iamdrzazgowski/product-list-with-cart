@@ -1,10 +1,12 @@
-function MenuItem({ product }) {
+function MenuItem({ product, onAddToCart }) {
     return (
         <li className='product-item'>
             <div className='image-container'>
                 <img src={product.image.desktop} />
             </div>
-            <button className='add-to-cart-btn'>
+            <button
+                className='add-to-cart-btn'
+                onClick={() => onAddToCart(product)}>
                 <img src='/src/assets/images/icon-add-to-cart.svg' />
                 Add to Cart
             </button>

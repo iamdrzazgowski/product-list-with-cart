@@ -1,3 +1,5 @@
+import Button from './Button';
+
 function CartItem({ product, onDeleteProduct }) {
     return (
         <li>
@@ -12,11 +14,16 @@ function CartItem({ product, onDeleteProduct }) {
                 </div>
             </div>
 
-            <button
+            <Button
+                className='remove-btn'
+                onClick={() => onDeleteProduct(product)}
+                icon='/src/assets/images/icon-remove-item.svg'
+            />
+            {/* <button
                 className='remove-btn'
                 onClick={() => onDeleteProduct(product)}>
                 <img src='/src/assets/images/icon-remove-item.svg' />
-            </button>
+            </button> */}
         </li>
     );
 }

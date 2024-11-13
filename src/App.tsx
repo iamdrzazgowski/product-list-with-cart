@@ -6,27 +6,53 @@ function App() {
     const [cart, setCart] = useState([]);
 
     const handleAddToCart = (product) => {
-        setCart((currCart) => {
-            const existingProduct = currCart.find(
-                (item) => item.id === product.id
-            );
+        setCart((currCart) => [...currCart, { ...product, quantity: 1 }]);
+    };
 
-            if (existingProduct) {
-                return currCart.map((item) =>
+    const handleDeleteProduct = (product) => {
+        const newCart = cart.filter((item) => item.id !== product.id);
+        setCart(newCart);
+    };
+
+    const handleIncrementProduct = (product) => {
+        const isOnCart = cart.find((item) => item.id === product.id);
+
+        if (!isOnCart) return;
+
+        setCart((currCart) =>
+            currCart.map((item) =>
+                item.id === product.id
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            )
+        );
+    };
+
+    const handleDecrementProduct = (product) => {
+        const isOnCart = cart.find((item) => item.id === product.id);
+
+        if (!isOnCart) return;
+
+        setCart((currCart) =>
+            currCart
+                .map((item) =>
                     item.id === product.id
-                        ? { ...item, quantity: item.quantity + 1 }
+                        ? { ...item, quantity: item.quantity - 1 }
                         : item
-                );
-            } else {
-                return [...currCart, { ...product, quantity: 1 }];
-            }
-        });
+                )
+                .filter((item) => item.quantity > 0)
+        );
     };
 
     return (
         <div className='container'>
-            <Menu onAddToCart={handleAddToCart} />
-            <Cart cart={cart} />
+            <Menu
+                onAddToCart={handleAddToCart}
+                cart={cart}
+                onIncrementProduct={handleIncrementProduct}
+                onDecrementProduct={handleDecrementProduct}
+            />
+            <Cart cart={cart} onDeleteProduct={handleDeleteProduct} />
         </div>
     );
 }

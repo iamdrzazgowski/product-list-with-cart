@@ -1,4 +1,4 @@
-function CartItem({ product }) {
+function CartItem({ product, onDeleteProduct }) {
     return (
         <li>
             <div className='cart-item-details'>
@@ -12,7 +12,9 @@ function CartItem({ product }) {
                 </div>
             </div>
 
-            <button className='remove-btn'>
+            <button
+                className='remove-btn'
+                onClick={() => onDeleteProduct(product)}>
                 <img src='/src/assets/images/icon-remove-item.svg' />
             </button>
         </li>

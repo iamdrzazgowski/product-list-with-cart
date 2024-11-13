@@ -1,7 +1,12 @@
 import data from '../data/data.json';
 import MenuItem from './MenuItem';
 
-function MenuList({ onAddToCart }) {
+function MenuList({
+    onAddToCart,
+    cart,
+    onIncrementProduct,
+    onDecrementProduct,
+}) {
     const productData = data;
 
     return (
@@ -10,6 +15,9 @@ function MenuList({ onAddToCart }) {
                 <MenuItem
                     product={product}
                     onAddToCart={onAddToCart}
+                    cart={cart}
+                    onIncrementProduct={onIncrementProduct}
+                    onDecrementProduct={onDecrementProduct}
                     key={product.id}
                 />
             ))}

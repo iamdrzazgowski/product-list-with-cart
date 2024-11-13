@@ -1,10 +1,14 @@
 import CartItem from './CartItem';
 
-function CartList({ cart }) {
+function CartList({ cart, onDeleteProduct }) {
     return (
         <ul>
             {cart.map((product) => (
-                <CartItem product={product} key={product.id} />
+                <CartItem
+                    product={product}
+                    key={product.id}
+                    onDeleteProduct={onDeleteProduct}
+                />
             ))}
         </ul>
     );

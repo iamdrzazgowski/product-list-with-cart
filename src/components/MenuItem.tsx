@@ -46,6 +46,7 @@ function MenuItem({
                             className='decrease-btn'
                             onClick={() => onDecrementProduct(product)}
                             icon='/src/assets/images/icon-decrement-quantity.svg'
+                            children={undefined}
                         />
                         <span className='item-counter'>{productQuantity}</span>
                         {/* <button
@@ -58,6 +59,7 @@ function MenuItem({
                             className='increase-btn'
                             onClick={() => onIncrementProduct(product)}
                             icon='/src/assets/images/icon-increment-quantity.svg'
+                            children={undefined}
                         />
                     </div>
                 )}

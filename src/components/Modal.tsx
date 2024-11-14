@@ -15,7 +15,8 @@ function Modal({ cart, onStartNewOrder }) {
 
                 <Button
                     className='new-order-btn'
-                    onClick={() => onStartNewOrder()}>
+                    onClick={() => onStartNewOrder()}
+                    icon={undefined}>
                     Start New Order
                 </Button>
             </div>

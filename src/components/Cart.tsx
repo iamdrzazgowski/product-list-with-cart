@@ -1,6 +1,6 @@
 import CartList from './CartList';
 
-function Cart({ cart, onDeleteProduct }) {
+function Cart({ cart, onDeleteProduct, onToggle }) {
     const totalPrice = cart.reduce(
         (acc, item) => acc + item.price * item.quantity,
         0
@@ -30,7 +30,9 @@ function Cart({ cart, onDeleteProduct }) {
                         </p>
                     </div>
 
-                    <button className='order-btn'>Confirm Order</button>
+                    <button className='order-btn' onClick={() => onToggle()}>
+                        Confirm Order
+                    </button>
                 </>
             ) : (
                 <>

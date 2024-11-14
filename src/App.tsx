@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Menu from './components/Menu';
 import Cart from './components/Cart';
+import Modal from './components/Modal';
 
 function App() {
     const [cart, setCart] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleAddToCart = (product) => {
         setCart((currCart) => [...currCart, { ...product, quantity: 1 }]);
@@ -44,6 +46,15 @@ function App() {
         );
     };
 
+    const handleOpenModal = () => {
+        setIsOpen((curr) => !curr);
+    };
+
+    const handleStartNewOrder = () => {
+        handleOpenModal();
+        setCart([]);
+    };
+
     return (
         <div className='container'>
             <Menu
@@ -52,7 +63,14 @@ function App() {
                 onIncrementProduct={handleIncrementProduct}
                 onDecrementProduct={handleDecrementProduct}
             />
-            <Cart cart={cart} onDeleteProduct={handleDeleteProduct} />
+            <Cart
+                cart={cart}
+                onDeleteProduct={handleDeleteProduct}
+                onToggle={handleOpenModal}
+            />
+            {isOpen && (
+                <Modal cart={cart} onStartNewOrder={handleStartNewOrder} />
+            )}
         </div>
     );
 }

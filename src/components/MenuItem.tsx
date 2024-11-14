@@ -31,7 +31,7 @@ function MenuItem({
                         <Button
                             className='add-to-cart-btn'
                             onClick={() => onAddToCart(product)}
-                            icon='/src/assets/images/icon-add-to-cart.svg'>
+                            icon='/images/icon-add-to-cart.svg'>
                             Add to Cart
                         </Button>
                     </>
@@ -45,7 +45,7 @@ function MenuItem({
                         <Button
                             className='decrease-btn'
                             onClick={() => onDecrementProduct(product)}
-                            icon='/src/assets/images/icon-decrement-quantity.svg'
+                            icon='/images/icon-decrement-quantity.svg'
                             children={undefined}
                         />
                         <span className='item-counter'>{productQuantity}</span>
@@ -58,7 +58,7 @@ function MenuItem({
                         <Button
                             className='increase-btn'
                             onClick={() => onIncrementProduct(product)}
-                            icon='/src/assets/images/icon-increment-quantity.svg'
+                            icon='/images/icon-increment-quantity.svg'
                             children={undefined}
                         />
                     </div>

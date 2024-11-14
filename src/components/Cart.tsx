@@ -24,7 +24,7 @@ function Cart({ cart, onDeleteProduct, onToggle }) {
                     </div>
 
                     <div className='carbon-neutral-container'>
-                        <img src='/src/assets/images/icon-carbon-neutral.svg' />
+                        <img src='/images/icon-carbon-neutral.svg' />
                         <p>
                             This is a <span>carbon-neutral</span> dilevery
                         </p>
@@ -37,7 +37,7 @@ function Cart({ cart, onDeleteProduct, onToggle }) {
             ) : (
                 <>
                     <div className='empty-cart'>
-                        <img src='/src/assets/images/illustration-empty-cart.svg' />
+                        <img src='/images/illustration-empty-cart.svg' />
                         <p className='empty-cart-text'>
                             Your added items will appear here
                         </p>

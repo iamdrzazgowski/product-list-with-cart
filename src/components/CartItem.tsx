@@ -17,7 +17,7 @@ function CartItem({ product, onDeleteProduct }) {
             <Button
                 className='remove-btn'
                 onClick={() => onDeleteProduct(product)}
-                icon='/src/assets/images/icon-remove-item.svg'
+                icon='/images/icon-remove-item.svg'
                 children={undefined}
             />
             {/* <button

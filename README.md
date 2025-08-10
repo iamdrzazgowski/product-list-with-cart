@@ -4,10 +4,6 @@ This project is an implementation of the **Product List With Cart** challenge fr
 
 ---
 
-##  Challenge Brief (Frontend Mentor)
-
-In this challenge, you’re tasked to build a product list with functional cart features, closely matching the provided design :contentReference[oaicite:1]{index=1}.
-
 ### 🔧 Required Features:
 - Add items to the cart and remove them  
 - Increase/decrease the number of items in the cart  
